@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from "react-redux";
+import "./App.css";
+//import SportsPoster1 from "./utils/SportsPoster1.png";
+import DashboardContainer from "./components/DashboardContainer";
+import sportsStore from "./utils/sportsStore";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={sportsStore}>
+      <div className="">
+        {/* <div className="w-16/9 h-screen relative">
+        <img
+          className=""
+          alt="sports-logo"
+          src={SportsPoster1}
+        />
+      </div> */}
+        <DashboardContainer />
+      </div>
+    </Provider>
   );
 }
 
